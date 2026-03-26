@@ -6,7 +6,7 @@ import Button from './Button';
 
 const Cta = () => {
   return (
-    <section className="relative mx-auto max-w-6xl overflow-clip flex items-center mb-12 justify-center bg-grey-200 rounded-3xl py-22 ">
+    <section className="relative mx-auto max-w-7xl overflow-clip flex items-center mb-12 justify-center bg-grey-200 rounded-3xl py-22 ">
         <div className="">
            <div className='hidden mini:block'>
                <img src={fork} alt='fork svg' className='absolute mini:-left-15 md:-left-25 mini:-bottom-6 md:top-5 mini:h-45 mini:w-45 md:h-85 md:w-85' />
