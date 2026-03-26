@@ -1,8 +1,9 @@
-import mission from '../../assets/Images/Large/image-about-our-mission-large.webp'
+import mission from '../../assets/Images/Large/image-about-our-mission-large.webp';
+import squig from '../../assets/Images/Scale/pattern-squiggle-2.svg'
 
 const Mission = () => {
   return (
-    <section className="flex items-center mb-12 mt-12 justify-center">
+    <section className="relative flex items-center mb-12 mt-12 justify-center">
       <div className="grid max-w-6xl items-center gap-10 lg:grid-cols-2 lg:gap-14">
         <div className='text-evergreen-900 text-left'>
           <h3 className='bg-orange-600 w-fit rounded-xl p-1.5 font-bold'>Our mission</h3>
@@ -22,11 +23,19 @@ const Mission = () => {
           </p>
         </div>
 
-          <div className="overflow-hidden rounded-2xl">
+          <div className="overflow-hidden lg:self-stretch rounded-2xl">
             <img
               src={mission}
               alt="Person preparing vegetables"
               className="h-65 w-full object-cover sm:h-85 lg:h-full"
+            />
+          </div>
+
+          <div className="hidden lg:block absolute lg:-right-8 lg:bottom-20 xl:-right-10 xl:bottom-15">
+            <img
+              src={squig}
+              alt="Person preparing vegetables"
+              className="w-35 h-35 xl:w-50 xl:h-50"
             />
           </div>
       </div>

@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className=" mx-auto max-w-6xl flex flex-col-reverse mini:flex-row items-center justify-center mini:justify-between gap-6 mini:gap-0 mb-12">
         <p className="text-xl text-[#4f5f5b]">
-          Made with <span className="text-red-500">♥</span> and 🥑
+          Made with <span className="text-red-500 text-3xl">♥</span> and 🥑
         </p>
 
         <div className="flex items-center gap-4">
