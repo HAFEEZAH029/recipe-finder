@@ -1,10 +1,13 @@
+import Mission from "../Components/About/Mission"
 
 
 const About = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+      <main>
+        <Mission />
+      </main>
+    </>
   )
 }
 
