@@ -3,6 +3,7 @@ import Root from "./Pages/Root";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Recipes from "./Pages/Recipes";
+import './App.css'
 
 
 function App() {
