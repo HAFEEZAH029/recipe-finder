@@ -4,6 +4,7 @@ import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Recipes from "./Pages/Recipes";
 import './App.css'
+import ErrorPage from "./Pages/ErrorPage";
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
     {
       path: '/',
       element: <Root />,
+      errorElement: <ErrorPage />,
       children: [
         {index: true, element: <Home />},
         {path: 'about', element: <About />},

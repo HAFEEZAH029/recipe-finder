@@ -1,10 +1,15 @@
+import Intro from "../Components/Recipes/Intro"
+import RecipesData from "../Components/Recipes/RecipesData"
 
 
 const Recipes = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+      <main>
+        <Intro />
+        <RecipesData />
+      </main>
+    </>
   )
 }
 
