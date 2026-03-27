@@ -5,6 +5,8 @@ import About from "./Pages/About";
 import Recipes from "./Pages/Recipes";
 import './App.css'
 import ErrorPage from "./Pages/ErrorPage";
+import RecipeDetails from "./Pages/RecipeDetails";
+
 
 
 function App() {
@@ -17,9 +19,9 @@ function App() {
       children: [
         {index: true, element: <Home />},
         {path: 'about', element: <About />},
-        {path: 'recipes', element: <Recipes />}
-      ]
-    }
+        {path: 'recipes', element: <Recipes />},
+        { path: 'recipes/:slug', element: <RecipeDetails /> }
+  ]}
   ])
 
   return <RouterProvider router={Router} />

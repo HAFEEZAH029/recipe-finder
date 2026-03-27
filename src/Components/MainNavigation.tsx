@@ -76,7 +76,7 @@ export default function MainNavigation() {
 
 
         {isMobileMenuOpen && (
-            <div className="absolute left-0 right-0 md:hidden flex flex-col text-left bg-white pb-4 animate-slideDown space-y-0.5 pt-4">
+            <div className="absolute z-10 left-0 right-0 md:hidden flex flex-col text-left bg-white pb-4 animate-slideDown space-y-0.5 pt-4">
               <NavLink
                 to="/"
                 end

@@ -2,6 +2,7 @@ import {Recipe } from "../../../Util/http"
 import prep from '../../assets/Images/Scale/icon-prep-time.svg';
 import cook from '../../assets/Images/Scale/icon-cook-time.svg';
 import servings from '../../assets/Images/Scale/icon-servings.svg';
+import { Link } from "react-router-dom";
 
 
 type Prop = {
@@ -11,7 +12,7 @@ type Prop = {
 const RecipeItem = ({recipe}: Prop) => {
     return (
             <article
-                className="overflow-hidden rounded-2xl bg-white shadow-sm transition hover:shadow-md"
+                className="overflow-hidden rounded-2xl bg-white shadow-sm cursor-pointer transition hover:shadow-md"
                 >
                       {/* Image */}
                     <img
@@ -38,8 +39,8 @@ const RecipeItem = ({recipe}: Prop) => {
                         </div>
 
                               {/* Button */}
-                        <button className="w-full rounded-md bg-evergreen-900 py-2 text-sm font-bold text-white hover:text-orange-500">
-                            View Recipe
+                        <button className="w-full rounded-md bg-evergreen-900 py-2 mb-6 md:mb-0 text-sm font-bold text-white hover:text-orange-500">
+                            <Link to={`/recipes/${recipe.slug}`}>View Recipe</Link>
                         </button>
                     </div>
                 </article>
