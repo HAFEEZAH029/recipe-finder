@@ -28,3 +28,15 @@ export const fetchRecipes = async (): Promise<Recipe[]> => {
   const data:Recipe[] = await res.json();
   return data;
 };
+
+export const fetchRecipesBySlug = async (slug: string) => {
+ await new Promise(resolve => setTimeout(resolve, 1000));
+  const res = await fetch("/data.json");
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch recipes");
+  }
+
+  const data:Recipe[] = await res.json();
+  return data.find((recipe) => recipe.slug === slug);
+};
