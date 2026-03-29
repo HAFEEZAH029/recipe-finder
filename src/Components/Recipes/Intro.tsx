@@ -1,9 +1,9 @@
 
 const Intro = () => {
   return (
-    <section className="relative overflow-hidden mb-12">
+    <section className="relative overflow-hidden mb-12" aria-labelledby="recipes-intro-heading">
       <div className="mx-auto max-w-6xl space-y-5 text-evergreen-900 text-left md:text-center sm:text-left">
-        <h1 className="mx-auto mt-6 max-w-4xl text-4xl font-extrabold tracking-tight">
+        <h1 id="recipes-intro-heading" className="mx-auto mt-6 max-w-4xl text-4xl font-extrabold tracking-tight">
           Explore our simple healthy recipes
         </h1>
 
