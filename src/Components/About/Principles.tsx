@@ -1,4 +1,5 @@
 import bullet from '../../assets/Images/Scale/icon-bullet-point.svg';
+import { motion } from 'motion/react';
 
 const Principles = () => {
   const principles = [
@@ -21,29 +22,33 @@ const Principles = () => {
   ];
 
   return (
-    <section className="mx-auto max-w-6xl mb-12 flex flex-col gap-5 sm:gap-0 sm:flex-row sm:items-center items-start justify-between">
-      <h2 className="w-full sm:w-[40%] text-left self-start text-4xl lg:text-5xl font-extrabold text-evergreen-900 leading-10 lg:leading-13">
+    <section className="mx-auto max-w-6xl mb-12 flex flex-col gap-5 sm:gap-0 sm:flex-row sm:items-center items-start justify-between" aria-labelledby="food-philosophy-heading">
+      <h2 id="food-philosophy-heading" className="w-full sm:w-[40%] text-left self-start text-4xl lg:text-5xl font-extrabold text-evergreen-900 leading-10 lg:leading-13">
         Our food philosophy
       </h2>
 
-      <div className="space-y-8 sm:space-y-10 w-full sm:w-[60%]">
+      <ul className="space-y-8 sm:space-y-10 w-full sm:w-[60%]" role="list" aria-label="Principles list">
         {principles.map((principle, index) => (
-          <div key={index} className="flex gap-4 sm:gap-6">
-            <div className="shrink-0 mt-1">
-              <img src={bullet} alt='bullet-point' />
-            </div>
+          <li key={index} className="flex gap-4 sm:gap-6" tabIndex={0} aria-label={principle.title}>
+            <motion.div
+              className="shrink-0 mt-1 h-fit"
+              whileHover={{ rotate: 360 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+            >
+              <img src={bullet} alt='' aria-hidden="true" />
+            </motion.div>
 
             <div className="flex-1 text-evergreen-900 text-left">
               <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">
                 {principle.title}
               </h3>
-              <p className="text-base sm:text-lgleading-relaxed">
+              <p className="text-base sm:text-lg leading-relaxed">
                 {principle.description}
               </p>
             </div>
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </section>
   );
 };

@@ -4,6 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 import Ham from '../assets/Images/Scale/icon-hamburger-menu.svg';
 import logoImg from '../assets/Images/Scale/logo.svg';
 import Button from './Button';
+import { AnimatePresence, motion } from 'motion/react';
 
 export default function MainNavigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
@@ -17,10 +18,12 @@ export default function MainNavigation() {
   };
 
   return (
-    <nav className="w-full relative border-b-grey-200 max-w-7xl mx-auto mb-3 px-4 py-2 sm:px-6 lg:px-8">
+    <nav className="w-full relative border-b-grey-200 max-w-7xl mx-auto mb-3 px-4 py-2 sm:px-6 lg:px-8" aria-label="Main navigation">
         <div className="flex items-center justify-between h-16 md:h-20">
           <div className="w-50 lg:w-90 cursor-pointer hover:opacity-80 transition-opacity">
-            <Link to='/'><img src={logoImg} alt='app-logo' className='' /></Link>
+            <Link to='/' aria-label="Go to homepage">
+              <img src={logoImg} alt='Recipe Finder logo' className='' />
+            </Link>
           </div>
 
           <div className="hidden md:flex items-center gap-8 lg:gap-12 flex-1 justify-center">
@@ -67,16 +70,28 @@ export default function MainNavigation() {
           <button
             onClick={toggleMobileMenu}
             className="md:hidden bg-grey-100 p-1.5 rounded-[5px] border-none outline-none"
-            aria-label="Toggle menu"
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-menu"
           >
-            <img src={Ham} alt='hamburger-menu' className='w-6 h-6 sm:w-8 sm:h-8' />
+            <img src={Ham} alt='' aria-hidden="true" className='w-6 h-6 sm:w-8 sm:h-8' />
           </button>
 
         </div>
 
-
-        {isMobileMenuOpen && (
-            <div className="absolute z-10 left-0 right-0 md:hidden flex flex-col text-left bg-white pb-4 animate-slideDown space-y-0.5 pt-4">
+        
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              id="mobile-menu"
+              role="menu"
+              aria-label="Mobile navigation menu"
+              className="absolute z-10 left-0 right-0 md:hidden flex flex-col text-left bg-white pb-4 space-y-0.5 pt-4"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
               <NavLink
                 to="/"
                 end
@@ -114,11 +129,13 @@ export default function MainNavigation() {
               >
                 Recipes
               </NavLink>
-              <button className="w-full bg-evergreen-900 text-white border-none outline-none hover:text-orange-500 px-4 py-2.5 rounded-md font-Nunito-400 font-medium text-sm transition-colors duration-200 mt-4">
+              <button className="w-full bg-evergreen-900 text-white border-none outline-none hover:text-orange-500 px-4 py-2.5 rounded-md font-Nunito-400 font-medium text-md transition-colors duration-200 mt-4">
                 Browse recipes
               </button>
-            </div>
-        )}
+            </motion.div>
+          )}
+        </AnimatePresence>
+
     </nav>
   );
 }

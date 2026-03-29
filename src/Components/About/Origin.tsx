@@ -1,4 +1,5 @@
 import bullet from '../../assets/Images/Scale/icon-bullet-point.svg';
+import { motion } from 'motion/react';
 
 const Origin = () => {
   const reasons = [
@@ -17,29 +18,33 @@ const Origin = () => {
   ];
 
   return (
-    <section className="mx-auto max-w-6xl mb-12 pb-10 border-b-2 border-b-grey-300 flex flex-col gap-5 sm:gap-0 sm:flex-row sm:items-center items-start justify-between">
-      <h2 className="w-full sm:w-[40%] text-left self-start text-4xl lg:text-5xl font-extrabold text-evergreen-900">
+    <section className="mx-auto max-w-6xl mb-12 pb-10 border-b-2 border-b-grey-300 flex flex-col gap-5 sm:gap-0 sm:flex-row sm:items-center items-start justify-between" aria-labelledby="why-exist-heading">
+      <h2 id="why-exist-heading" className="w-full sm:w-[40%] text-left self-start text-4xl lg:text-5xl font-extrabold text-evergreen-900">
         Why we exist
       </h2>
-      
-      <div className="space-y-8 sm:space-y-10 w-full sm:w-[60%]">
+
+      <ul className="space-y-8 sm:space-y-10 w-full sm:w-[60%]" role="list" aria-label="Reasons for existence">
         {reasons.map((reason, index) => (
-          <div key={index} className="flex gap-4 sm:gap-6">
-            <div className="shrink-0 mt-1">
-              <img src={bullet} alt='bullet-point' />
-            </div>
-            
+          <li key={index} className="flex gap-4 sm:gap-6" tabIndex={0} aria-label={reason.title}>
+            <motion.div
+              className="shrink-0 mt-1 h-fit"
+              whileHover={{ rotate: 360 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+            >
+              <img src={bullet} alt='' aria-hidden="true" />
+            </motion.div>
+
             <div className="flex-1 text-evergreen-900 text-left">
               <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">
                 {reason.title}
               </h3>
-              <p className="text-base sm:text-lgleading-relaxed">
+              <p className="text-base sm:text-lg leading-relaxed">
                 {reason.description}
               </p>
             </div>
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </section>
   );
 };

@@ -1,11 +1,13 @@
+import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./Pages/Root";
 import Home from "./Pages/Home";
-import About from "./Pages/About";
-import Recipes from "./Pages/Recipes";
+const About = React.lazy(() => import("./Pages/About"));
+const Recipes = React.lazy(() => import("./Pages/Recipes"));
 import './App.css'
-import ErrorPage from "./Pages/ErrorPage";
-import RecipeDetails from "./Pages/RecipeDetails";
+const ErrorPage = React.lazy(() => import("./Pages/ErrorPage"))
+const RecipeDetails = React.lazy(() => import("./Pages/RecipeDetails"));
+import { Suspense } from "react";
 
 
 
@@ -24,7 +26,11 @@ function App() {
   ]}
   ])
 
-  return <RouterProvider router={Router} />
+  return (
+    <Suspense fallback={<div className="text-center mt-10 text-emerald-900">Loading...</div>}>
+      <RouterProvider router={Router} />
+    </Suspense>
+  )
 
 }
 
