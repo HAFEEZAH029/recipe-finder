@@ -18,7 +18,7 @@ const RecipeItem = ({recipe}: Prop) => {
             >
                 {/* Image */}
                 <img
-                    src={`http://localhost:5173/${recipe.image.large}`}
+                    src={recipe.image.large}
                     alt={`Photo of ${recipe.title}`}
                     loading="lazy"
                     className="sm:h-[50%] w-full object-cover"
