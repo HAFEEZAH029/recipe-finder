@@ -20,7 +20,6 @@ const RecipeItem = ({recipe}: Prop) => {
                 <img
                     src={recipe.image.large}
                     alt={`Photo of ${recipe.title}`}
-                    loading="lazy"
                     className="sm:h-[50%] w-full object-cover"
                 />
 
