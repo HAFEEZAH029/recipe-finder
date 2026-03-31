@@ -10,12 +10,14 @@ import RecipeItem from "../Components/Recipes/RecipeItem";
 
 
 const RecipeDetails = () => {
-   const {slug} =useParams();
+   const {slug} = useParams();
    const {data:recipe, isLoading, isError} = useQuery({
     queryKey: ["recipeDeets", slug],
     queryFn: () => fetchRecipesBySlug(slug!), //the ! is use to shut typescript and asssure that slug CANNOT be null, else will will get a warning that it could be undefined
     enabled: !!slug //this means => only run this query if slug is true
    })
+   //console.log(recipe);
+   console.log( `Recipe image path:, ${recipe?.image.large}` );
 
    const {data:recipes, isLoading:isRecipesLoading, isError:isRecipesError} = useQuery({
     queryKey: ["recipe"],
@@ -51,7 +53,7 @@ const RecipeDetails = () => {
           {/* IMAGE */}
           <div>
             <img
-              src={`http://localhost:5173/${recipe?.image.large}`}
+              src={recipe?.image?.large}
               alt={recipe?.title}
               className="w-full rounded-2xl object-cover"
             />
