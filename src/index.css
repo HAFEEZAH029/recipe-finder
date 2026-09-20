@@ -37,8 +37,18 @@
 }
 
 @theme{
-  --font-nunito: "Nunito", sans-serif;
-  --color-mint-500: oklch(0.72 0.11 178);
+  --breakpoint-mini: 32rem;
+  --breakpoint-xsm: 20rem;
+  --font-sans: var(--font-nunito);
+  --font-nunito: "Nunito", sans-serif, system-ui;
+  --color-evergreen-900: rgb(22, 58, 52);
+  --color-evergreen-600: rgb(57, 88, 82);
+  --color-grey-300: rgb(208, 220, 217);
+  --color-grey-200: rgb(224, 230, 227);
+  --color-grey-100: rgb(246, 245, 241);
+  --color-orange-500: rgb(254, 159, 107);
+  --color-teal-500: rgb(73, 172, 155);
+  --color-indigo-500: rgb(230, 125, 219);
 }
 
 /**:root {

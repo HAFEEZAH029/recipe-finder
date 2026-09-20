@@ -1,62 +1,76 @@
-# 🍲 Recipe Finder App
+🍲 Healthy Recipe Finder App
 
-A modern recipe search application built with React, TypeScript, and Vite. This project allows users to search for recipes and view detailed information in a clean, responsive interface. Users can also filter recipes based on prep time and cook time making it easier to get the preferred in a jiffy!
+    A modern, performant recipe search application built with React, TypeScript, and Vite.
+    This app allows users to discover healthy recipes, filter them based on cooking constraints, and enjoy a smooth, animated user experience.
 
----
+                       🚀 Live Features
+✨ Smart Recipe Search
+    Real-time search filtering based on recipe names and ingredients
 
-## 🚀 Tech Stack
+⏱️ Advanced Filtering System
+    Filter recipes by maximum prep time
+    Filter recipes by maximum cook time
+    Combined filtering logic for precise results
 
-* **React** – Component-based UI
-* **TypeScript** – Type safety and better developer experience
-* **Vite** – Fast development and build tool
-* **React Router** – Client-side routing
-* **React Query** – Data fetching and caching
-* **Tailwind CSS** – Utility-first styling
-* **Framer Motion** – Smooth, seamless animations
+📭 Empty State Handling
+    Displays a friendly “No recipes found” message when filters return no matches
 
----
+🎞️ Smooth Animations
+    Integrated animations for UI transitions using Framer Motion
 
-## 📁 Project Setup
+🧪 Robust Testing
+     Unit tests for:
+       Search functionality
+       Prep time filtering
+       Cook time filtering
+       Empty state rendering
 
-This project was initialized using Vite and configured with:
+🧠 Key Concepts & Improvements
+      This project goes beyond basic functionality and focuses on real-world frontend engineering practices:
 
-* TypeScript for static typing
-* Tailwind CSS for styling
-* React Router for navigation
-* React Query for managing server state
-* Framer Motion for Animation
+🏗️ Structural Optimization
+      Clean and scalable folder structure
+      Separation of concerns (UI, logic, routing)
+      Reusable and modular components
 
----
+⚡ Performance & State Management
+      Efficient state updates for filtering logic
+      Optimized rendering for dynamic lists
 
-## 📌 Features (In Progress)
+🔍 Testing-Driven Confidence
+      Implemented tests using:
+        Jest
+        React Testing Library
+        Ensured reliability of core features (filters & UI states)
 
-* 🔍 Search for recipes
-* 📄 View recipe details
-* ⭐ Filter recipes based on max prep time
-* ⭐ Filter recipes based on max cook time
+🎨 UI/UX Enhancements
+      Responsive layout using Tailwind CSS
+      Smooth transitions and micro-interactions with Framer Motion
+      Clear feedback for user actions (especially empty states)
 
----
+🛠️ Tech Stack
+      React – Component-based UI architecture
+      TypeScript – Type safety and maintainability
+      Vite – Lightning-fast development environment
+      React Router – Client-side navigation
+      TanStack Query (React Query) – Data fetching & caching
+      Tailwind CSS – Utility-first styling
+      Framer Motion – Animations and transitions
+      Jest + React Testing Library – Testing framework
 
-## 🧠 What I’ve Implemented So Far
+📱 Enhanced Mobile Responsiveness And Accessibility
 
-* Project setup with Vite and TypeScript
-* Tailwind CSS configuration
-* Routing structure using React Router
-* React Query setup for data fetching
-* Basic project structure and organization
-
----
 
 ## 📂 Folder Structure
 
 ```
 src/
- ├── pages/
+ ├── Pages/
  ├── Components/
  ├── assets/
- ├── routes/
+ ├── test/
  └── App.tsx
-```
+Util/
 
 ---
 
@@ -71,23 +85,39 @@ npm run dev
 
 ---
 
-## 🎯 Goals for This Project
+To run tests:
 
-* Build a fully functional recipe search app
-* Practice working with React Query
-* Improve TypeScript usage in real-world scenarios
-* Strengthen project architecture and scalability
-* Ensure the app is fully accessible
+```bash
+npm test
+```
+
+🧪 Testing Coverage
+
+The app includes tests for critical user flows:
+
+  ✅ Search filter functionality
+  ✅ Prep time filter logic
+  ✅ Cook time filter logic
+  ✅ Empty state rendering
+
+This ensures the app behaves correctly under different user interactions.
+
+
+🎯 What I Learnt;
+        Writing testable React components
+        Structuring scalable frontend applications
+        Managing UI state efficiently
+        Improving UX with animations and feedback states
+        Debugging and fixing real-world issues in testing environments
 
 
 ---
 
 ## 📌 Future Improvements
 
-* Add recipe detail view
-* Implement favorites feature
-* Improve UI/UX design
-* Integrate a real API (if needed)
+    ❤️ Add “Favorites” feature
+    🌐 Integrate a live recipe API
+    🔎 Add more advanced filtering (diet types, calories, etc.)
 
 ---
 
