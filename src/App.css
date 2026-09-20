@@ -5,6 +5,40 @@
   text-align: center;
 }
 
+body{
+  background-color: #F6F5F1;
+}
+
+@keyframes slideDown {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+ 
+        .animate-slideDown {
+          animation: slideDown 0.3s ease-out;
+        }
+ 
+        /* Tablet (md breakpoint) */
+        @media (min-width: 768px) {
+          nav {
+            border-bottom-width: 1px;
+          }
+        }
+
+        /* Ensure proper spacing across all screens */
+        @media (max-width: 640px) {
+          .max-w-7xl {
+            padding-left: 1rem;
+            padding-right: 1rem;
+          }
+        }
+
  /** .logo {
   height: 6em;
   padding: 1.5em;
